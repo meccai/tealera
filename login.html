@@ -38,7 +38,6 @@
       background-position: right bottom;
     }
 
-    /* Login Form Styles */
     .login-form {
       background: white;
       padding: 2rem;
@@ -110,45 +109,9 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .hidden {
-      display: none;
-    }
-
-    /* Image Section */
-    .image-info {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .image-info img {
-      width: 120px;
-      height: auto;
-      cursor: pointer;
-      border-radius: 0.75rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .image-info img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Modal Styles */
-    .modal-content {
-      padding: 2rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    .modal-header {
-      background: linear-gradient(135deg, #00ffcc, #800080);
-      color: white;
-    }
-
-    .modal-footer {
-      border-top: 1px solid #ddd;
+    /* Main Content Styles */
+    #main-content {
+      display: none; /* Hidden initially, will be shown after successful login */
     }
 
     /* Responsive Styles */
@@ -156,16 +119,6 @@
       .login-form {
         width: 90%;
         padding: 1.5rem;
-      }
-
-      .image-info {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .image-info img {
-        width: 100px;
-        margin-bottom: 1rem;
       }
     }
   </style>
@@ -189,38 +142,182 @@
         <a href="#" class="link">¿Olvidaste tu contraseña?</a>
         <br>
         <button type="submit" id="login-button">Ingresar</button>
-        <!-- Image Info Section -->
-        <div class="image-info">
-          <img src="image1.jpg" alt="Industria Tealera 1" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Info1">
-          <img src="image2.jpg" alt="Industria Tealera 2" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Info2">
-          <img src="image3.jpg" alt="Industria Tealera 3" data-bs-toggle="modal" data-bs-target="#infoModal" data-info="Info3">
-        </div>
       </form>
     </div>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="infoModalLabel">Información</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="modal-body">
-          <!-- Information will be loaded here -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Main Content (Hidden initially) -->
+  <div id="main-content">
+    <!-- Existing HTML content here -->
+    <h1></h1>
 
-  <!-- JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9r3tDhzHp8W5nccIJaaIlP4c6Wkz2X8AtUmK+R7zRDi6P/U5e5F" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-k9U4TJlI0zPf4t8LLCKTAxYfzmvNiyHXmT+5JvBvG3EuOsP5V7rFtwVcd6C4mA0k" crossorigin="anonymous"></script>
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      <!-- Elementos para colocar en el navbar izquierdo -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="index3.html" class="nav-link">Enlace 1 Izquierdo</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Enlace 2 Izquierdo</a>
+        </li>
+      </ul>
+
+      <!-- Elementos para colocar en el navbar derecho -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Enlace 1 Derecho</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="#" class="nav-link">Enlace 2 Derecho</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Sidebar principal -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Logo -->
+      <a href="index3.html" class="brand-link">
+        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">Campus de Robótica</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="#" class="d-block">Usuario</a>
+          </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item menu-open">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Menú desplegable
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="./index.html" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Submenú 1</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="./index2.html" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Submenú 2</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="pages/widgets.html" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  Menú
+                  <span class="right badge badge-danger">New</span>
+                </p>
+              </a>
+            </li>
+            <li class="nav-header">Separador</li>  
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0">Dashboard</h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <!--Aca se colocaría detalles del Dashboard-->
+          anualmente 80 mil toneladas de te, lo que equivale al 90% de la produccion de america
+          el 92% se produce en misiones y equivale al 2% de la produccion mundial
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <footer class="main-footer">
+      Pie de la página Izquierdo
+      <div class="float-right d-none d-sm-inline-block">
+        Pie de la página Derecho
+      </div>
+    </footer>
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <!-- Bootstrap 4 -->
+  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="plugins/sparklines/sparkline.js"></script>
+  <!-- JQVMap -->
+  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="plugins/moment/moment.min.js"></script>
+  <script src="plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard.js"></script>
+
+  <script>
+    // Login JavaScript
     document.getElementById('login-form').addEventListener('submit', function(event) {
       event.preventDefault();
       const username = document.getElementById('username').value;
@@ -228,24 +325,10 @@
 
       if (username === 'admin' && password === 'admin') {
         document.getElementById('login-container').style.display = 'none';
-        document.getElementById('main-content').classList.remove('hidden');
+        document.getElementById('main-content').style.display = 'block'; // Make main content visible
       } else {
         alert('Nombre de usuario o contraseña incorrectos');
       }
-    });
-
-    // Modal info handling
-    const infoMap = {
-      Info1: 'La industria tequera en Misiones es una de las más importantes de Argentina. Produce alrededor de 80 mil toneladas de té anualmente, que equivale al 90% de la producción de té en América.',
-      Info2: 'La región de Misiones cuenta con un clima subtropical que es ideal para el cultivo del té. Las plantaciones se extienden por miles de hectáreas, contribuyendo significativamente a la economía local.',
-      Info3: 'El té de Misiones es conocido por su alta calidad y sabor distintivo. Se exporta a numerosos países y es una parte integral de la cultura y la tradición de la región.'
-    };
-
-    document.querySelectorAll('.image-info img').forEach(img => {
-      img.addEventListener('click', function() {
-        const infoKey = img.getAttribute('data-info');
-        document.getElementById('modal-body').textContent = infoMap[infoKey];
-      });
     });
   </script>
 </body>
