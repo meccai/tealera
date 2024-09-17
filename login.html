@@ -18,8 +18,8 @@
       font-family: 'Source Sans Pro', sans-serif;
     }
 
-    /* Login Page Styles */
-    .login-container {
+    /* Login and Register Page Styles */
+    .login-container, .register-container {
       position: fixed;
       top: 0;
       left: 0;
@@ -33,12 +33,12 @@
       transition: background 1s ease;
     }
 
-    .login-container:hover {
+    .login-container:hover, .register-container:hover {
       background: linear-gradient(135deg, rgba(0, 255, 204, 0.6), rgba(128, 0, 128, 0.6));
       background-position: right bottom;
     }
 
-    .login-form {
+    .login-form, .register-form {
       background: white;
       padding: 2rem;
       border-radius: 1.5rem;
@@ -47,18 +47,18 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .login-form:hover {
+    .login-form:hover, .register-form:hover {
       transform: scale(1.05);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
     }
 
-    .login-form h1 {
+    .login-form h1, .register-form h1 {
       margin-bottom: 1.5rem;
       font-size: 1.75rem;
       color: #333;
     }
 
-    .login-form label {
+    .login-form label, .register-form label {
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
@@ -66,7 +66,7 @@
       color: #555;
     }
 
-    .login-form input {
+    .login-form input, .register-form input {
       border: 1px solid #ddd;
       border-radius: 0.5rem;
       padding: 0.75rem;
@@ -76,23 +76,23 @@
       font-size: 1rem;
     }
 
-    .login-form input:focus {
+    .login-form input:focus, .register-form input:focus {
       border-color: #6c757d;
       outline: none;
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
 
-    .login-form a {
+    .login-form a, .register-form a {
       color: #007bff;
       text-decoration: none;
       font-size: 0.875rem;
     }
 
-    .login-form a:hover {
+    .login-form a:hover, .register-form a:hover {
       text-decoration: underline;
     }
 
-    .login-form button {
+    .login-form button, .register-form button {
       background: linear-gradient(135deg, #00ffcc, #800080);
       border: none;
       color: white;
@@ -104,7 +104,7 @@
       transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .login-form button:hover {
+    .login-form button:hover, .register-form button:hover {
       background: linear-gradient(135deg, #00e5cc, #6a1b9a);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
@@ -116,7 +116,7 @@
 
     /* Responsive Styles */
     @media (max-width: 768px) {
-      .login-form {
+      .login-form, .register-form {
         width: 90%;
         padding: 1.5rem;
       }
@@ -139,9 +139,36 @@
           <input type="password" id="password" placeholder="Password" required>
         </label>
         <br>
-        <a href="#" class="link">¿Olvidaste tu contraseña?</a>
+        <a href="#" id="show-register">¿No tienes una cuenta? Regístrate</a>
         <br>
         <button type="submit" id="login-button">Ingresar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Register Form (Hidden initially) -->
+  <div class="register-container" id="register-container" style="display: none;">
+    <div class="register-form">
+      <h1 class="title">Registro</h1>
+      <form id="register-form">
+        <label>
+          <i class="fa-regular fa-user"></i>
+          <input type="text" id="register-username" placeholder="Username" required>
+        </label>
+        <br>
+        <label>
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="register-password" placeholder="Password" required>
+        </label>
+        <br>
+        <label>
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+        </label>
+        <br>
+        <a href="#" id="show-login">¿Ya tienes una cuenta? Inicia sesión</a>
+        <br>
+        <button type="submit" id="register-button">Registrarse</button>
       </form>
     </div>
   </div>
@@ -179,157 +206,4 @@
     <!-- /.navbar -->
 
     <!-- Sidebar principal -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-      <!-- Logo -->
-      <a href="index3.html" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Campus de Robótica</span>
-      </a>
-
-      <!-- Sidebar -->
-      <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-          </div>
-          <div class="info">
-            <a href="#" class="d-block">Usuario</a>
-          </div>
-        </div>
-
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <li class="nav-item menu-open">
-              <a href="#" class="nav-link active">
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-                <p>
-                  Menú desplegable
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="./index.html" class="nav-link active">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Submenú 1</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="./index2.html" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Submenú 2</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                <p>
-                  Menú
-                  <span class="right badge badge-danger">New</span>
-                </p>
-              </a>
-            </li>
-            <li class="nav-header">Separador</li>  
-          </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-      </div>
-      <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-      <!-- Content Header (Page header) -->
-      <div class="content-header">
-        <div class="container-fluid">
-          <div class="row mb-2">
-            <div class="col-sm-6">
-              <h1 class="m-0">Dashboard</h1>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </div>
-      <!-- /.content-header -->
-
-      <!-- Main content -->
-      <section class="content">
-        <div class="container-fluid">
-          <!--Aca se colocaría detalles del Dashboard-->
-          anualmente 80 mil toneladas de te, lo que equivale al 90% de la produccion de america
-          el 92% se produce en misiones y equivale al 2% de la produccion mundial
-        </div><!-- /.container-fluid -->
-      </section>
-      <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      Pie de la página Izquierdo
-      <div class="float-right d-none d-sm-inline-block">
-        Pie de la página Derecho
-      </div>
-    </footer>
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
-  </div>
-  <!-- ./wrapper -->
-
-  <!-- jQuery -->
-  <script src="plugins/jquery/jquery.min.js"></script>
-  <!-- jQuery UI 1.11.4 -->
-  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
-    $.widget.bridge('uibutton', $.ui.button)
-  </script>
-  <!-- Bootstrap 4 -->
-  <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- ChartJS -->
-  <script src="plugins/chart.js/Chart.min.js"></script>
-  <!-- Sparkline -->
-  <script src="plugins/sparklines/sparkline.js"></script>
-  <!-- JQVMap -->
-  <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-  <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-  <!-- jQuery Knob Chart -->
-  <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-  <!-- daterangepicker -->
-  <script src="plugins/moment/moment.min.js"></script>
-  <script src="plugins/daterangepicker/daterangepicker.js"></script>
-  <!-- Tempusdominus Bootstrap 4 -->
-  <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-  <!-- Summernote -->
-  <script src="plugins/summernote/summernote-bs4.min.js"></script>
-  <!-- overlayScrollbars -->
-  <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-  <!-- AdminLTE App -->
-  <script src="dist/js/adminlte.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="dist/js/demo.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="dist/js/pages/dashboard.js"></script>
-
-  <script>
-    // Login JavaScript
-    document.getElementById('login-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-
-      if (username === 'admin' && password === 'admin') {
-        document.getElementById('login-container').style.display = 'none';
-        document.getElementById('main-content').style.display = 'block'; // Make main content visible
-      } else {
-        alert('Nombre de usuario o contraseña incorrectos');
-      }
-    });
-  </script>
-</body>
-</html>
+   
